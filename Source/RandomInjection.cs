@@ -115,12 +115,12 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
         }
 
         private static void AddRandomCalls(List<MethodInfo> targetMethods) {
-#if V1221
+#if V1214 || V1221
             Add(targetMethods, typeof(WaterDrip).GetMethod("Start", allFlags));
             Add(targetMethods, typeof(WaterDrip).GetMethod("Update", allFlags));
             Add(targetMethods, typeof(PushableRubble).GetMethod("OnEnable", allFlags));
 #endif
-#if V1221 || V1432
+#if V1214 || V1221 || V1432
             Add(targetMethods, typeof(Breakable).GetMethod("Break", allFlags));
             Add(targetMethods, typeof(Breakable).GetMethod("SpawnNailHitEffect", allFlags));
             Add(targetMethods, typeof(BreakableInfectedVine).GetMethod("OnTriggerEnter2D", allFlags));
@@ -158,7 +158,7 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
             Add(targetMethods, typeof(TinkEffect).GetMethod("OnTriggerEnter2D", allFlags));
             Add(targetMethods, typeof(TownGrass).GetMethod("OnTriggerEnter2D", allFlags));
 #endif
-#if V1221
+#if V1214 || V1221
             Add(targetMethods, typeof(PlayFromRandomFrameMecanim).GetNestedType("<DelayStart>c__IteratorA", BindingFlags.NonPublic)?.GetMethod("MoveNext", allFlags));
             Add(targetMethods, typeof(HeroController).GetNestedType("<CheckForTerrainThunk>c__Iterator1C", BindingFlags.NonPublic)?.GetMethod("MoveNext", allFlags));
 #endif
@@ -220,7 +220,7 @@ namespace Assembly_CSharp.TasInfo.mm.Source {
             Add(targetMethods, typeof(Walker).GetMethod("StartMoving", allFlags));
             Add(targetMethods, typeof(WeaverlingEnemyList).GetMethod("GetTarget", allFlags));
 #endif
-#if V1221 || V1028 || V1028_KRYTHOM
+#if V1214 || V1221 || V1028 || V1028_KRYTHOM
             Add(targetMethods, typeof(UnityEngine.ParticleEmitter).GetMethod("Emit", allFlags, null, new Type[] { }, null));
 #endif
             Add(targetMethods, typeof(AudioSourcePitchRandomizer).GetMethod("Awake", allFlags));
